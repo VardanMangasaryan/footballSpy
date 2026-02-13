@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Spy Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="card">
+                <h1>⚽ Football Spy</h1>
+                <p class="subtitle">Find the spy among your friends!</p>
+                
+                <div class="input-group">
+                    <label for="player-count">Number of Players</label>
+                    <input type="number" id="player-count" min="3" max="10" value="4">
+                    <span class="hint">3 to 10 players</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="veryHard">Very Hard</option>
+                    </select>
+                    <span class="hint" id="difficulty-hint">45 easy + 45 medium players</span>
+                </div>
+                
+                <button id="start-btn" class="btn btn-primary">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Reveal Screen -->
+        <div id="reveal-screen" class="screen">
+            <div class="card">
+                <div class="player-indicator">
+                    <span class="player-number" id="current-player-num">1</span>
+                    <span class="player-total">/ <span id="total-players">4</span></span>
+                </div>
+                <h2 id="reveal-text">Player 1</h2>
+                <p class="instruction">Tap the button below to reveal your role.<br>Make sure no one else is looking!</p>
+                <button id="reveal-btn" class="btn btn-primary">👁️ Reveal Role</button>
+            </div>
+        </div>
+
+        <!-- Role Screen -->
+        <div id="role-screen" class="screen">
+            <div class="card" id="role-card">
+                <div id="role-content">
+                    <!-- Content will be injected by JS -->
+                </div>
+                <button id="hide-btn" class="btn btn-secondary">Hide & Pass to Next</button>
+            </div>
+        </div>
+
+        <!-- Discussion Screen -->
+        <div id="discussion-screen" class="screen">
+            <div class="card">
+                <div class="discussion-icon">🔍</div>
+                <h2>Discussion Phase</h2>
+                <p class="discussion-text">All players have seen their roles.<br>Now discuss and find the spy!</p>
+                <div class="tips">
+                    <h3>Tips:</h3>
+                    <ul>
+                        <li>Ask questions about the football player</li>
+                        <li>Watch for vague or suspicious answers</li>
+                        <li>The spy doesn't know the player name!</li>
+                    </ul>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">🔄 Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-toggle">
+        <button id="theme-btn" title="Toggle dark mode">🌙</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
